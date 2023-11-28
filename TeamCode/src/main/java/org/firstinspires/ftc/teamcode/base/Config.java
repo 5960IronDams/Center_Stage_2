@@ -45,4 +45,12 @@ public class Config {
     public static final String CONVEYOR_SERVO = "Conveyor";
     public static final String PIXEL_PUSHER_SERVO = "PXLPUSHER";
     //endregion
+
+    //region Distances
+    public static final String DS_RIGHT_RIGHT = "DRR4";
+    public static final String DS_RIGHT_LEFT = "DRR2";
+
+    public static final String DS_LEFT_RIGHT = "DRR3";
+    public static final String DS_LEFT_LEFT = "DRR1";
+    //endregion
 }

@@ -11,13 +11,26 @@ public class Drive {
     LinearOpMode _linearOpMode;
     Motors _motors;
 
-    public Drive(LinearOpMode linearOpMode, Motors motors, int posTolerance) {
+    public String Parking = "Right";
+
+    public Drive(LinearOpMode linearOpMode, Motors motors) {
         _linearOpMode = linearOpMode;
         _motors = motors;
 
         for (DcMotor mtr : _motors.DcMotors) {
             mtr.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            ((DcMotorEx) mtr).setTargetPositionTolerance(posTolerance);
+            ((DcMotorEx) mtr).setTargetPositionTolerance(150);
+        }
+    }
+
+    public void SetParking() {
+        if (_linearOpMode.gamepad1.right_bumper) {
+            _linearOpMode.sleep(200);
+            Parking = "Right";
+        }
+        else if (_linearOpMode.gamepad1.left_bumper) {
+            _linearOpMode.sleep(200);
+            Parking = "Left";
         }
     }
 
